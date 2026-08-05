@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b0e">
+  <meta name="description" content="Your local video library, beautifully organized.">
+  <title>Luma Library</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <button class="icon-button menu-button" id="menuBtn" aria-label="Toggle navigation"><i data-lucide="menu"></i></button>
+      <button class="brand" data-route="home" aria-label="Home">
+        <span class="brand-mark"><i data-lucide="play"></i></span>
+        <span id="brandName">Luma Library</span>
+      </button>
+      <div class="top-actions">
+        <label class="search"><input id="searchInput" type="search" placeholder="Search" autocomplete="off"><button type="button" class="search-submit" aria-label="Search"><i data-lucide="search"></i></button></label>
+        <button class="icon-button mobile-search-button" id="mobileSearchBtn" aria-label="Open search"><i data-lucide="search"></i></button>
+        <button class="icon-button" id="settingsBtn" aria-label="Settings"><i data-lucide="settings"></i></button>
+      </div>
+    </header>
+
+    <aside class="sidebar" aria-label="Main navigation">
+      <nav>
+        <button class="side-item active" data-route="home"><i data-lucide="home"></i><span>Home</span></button>
+        <button class="side-item" data-shortcut="shorts"><i data-lucide="clapperboard"></i><span>Short videos</span></button>
+        <button class="side-item" data-route="library"><i data-lucide="library"></i><span>Library</span></button>
+      </nav>
+      <div class="side-divider"></div>
+      <nav>
+        <button class="side-item" data-filter="movie"><i data-lucide="film"></i><span>Movies</span></button>
+        <button class="side-item" data-filter="episode"><i data-lucide="list-video"></i><span>Episodes</span></button>
+        <button class="side-item" data-filter="tutorial"><i data-lucide="graduation-cap"></i><span>Learning</span></button>
+      </nav>
+    </aside>
+
+    <main id="main"></main>
+
+    <nav class="mobile-nav">
+      <button data-route="home" class="active"><i data-lucide="home"></i><span>Home</span></button>
+      <button data-route="library"><i data-lucide="layout-grid"></i><span>Library</span></button>
+      <button id="mobileSettings"><i data-lucide="settings"></i><span>Settings</span></button>
+    </nav>
+  </div>
+
+  <div id="toastHost" class="toast-host" aria-live="polite"></div>
+  <dialog id="detailsDialog" class="dialog details-dialog"></dialog>
+  <dialog id="settingsDialog" class="dialog settings-dialog"></dialog>
+  <dialog id="browserDialog" class="dialog browser-dialog"></dialog>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

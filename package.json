@@ -1,0 +1,27 @@
+{
+  "name": "luma-library",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A lightweight, local-first video streaming library.",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "scan": "node --env-file-if-exists=.env server/cli-scan.js",
+    "test": "node --test",
+    "check": "node --check server/index.js && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "13.0.2",
+    "chokidar": "5.0.0",
+    "express": "5.2.1",
+    "helmet": "8.3.0",
+    "lucide": "^1.28.0",
+    "pino-http": "11.0.0",
+    "sharp": "0.35.3",
+    "zod": "4.4.3"
+  }
+}
