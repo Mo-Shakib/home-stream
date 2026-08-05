@@ -1,6 +1,6 @@
-# Luma Library
+# Home Library
 
-Luma Library is a lightweight, local-first video catalog and streaming server for a trusted home network. It recursively indexes folders on the host machine, extracts technical details with FFmpeg, creates thumbnails, optionally matches online metadata, and serves a responsive, account-free web interface to any device on the same LAN.
+Home Library is a lightweight, local-first video catalog and streaming server for a trusted home network. It recursively indexes folders on the host machine, extracts technical details with FFmpeg, creates thumbnails, optionally matches online metadata, and serves a responsive, account-free web interface to any device on the same LAN.
 
 ## Quick start
 
@@ -14,7 +14,7 @@ npm start
 
 Open `http://localhost:7331`, choose **Settings**, and add one or more media folders. The terminal also prints network addresses you can open on phones, tablets, TVs, and other computers connected to the same network.
 
-If a firewall prompt appears, allow incoming connections for Node.js on your private network. Luma binds to `0.0.0.0` by default; set `LUMA_HOST=127.0.0.1` to keep it available only on the host computer.
+If a firewall prompt appears, allow incoming connections for Node.js on your private network. Home Library binds to `0.0.0.0` by default; set `LUMA_HOST=127.0.0.1` to keep it available only on the host computer.
 
 ## Configuration
 
@@ -22,7 +22,7 @@ Copy `.env.example` to `.env`. The project name is deliberately configuration-dr
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `LUMA_NAME` | `Luma Library` | Product name shown in the UI |
+| `LUMA_NAME` | `Home Library` | Product name shown in the UI |
 | `LUMA_PORT` | `7331` | HTTP port |
 | `LUMA_HOST` | `0.0.0.0` | Network interface binding |
 | `LUMA_DATA_DIR` | `./data` | SQLite database and generated artwork |
@@ -40,7 +40,7 @@ TV episode matching can fall back to TVmaze without a key. All online lookup is 
 - Missing files are removed from the catalog; source files themselves are never altered or deleted.
 - Automatic scan frequency is configurable in Settings. A scan also runs at startup when folders exist.
 
-Supported discovery extensions are MP4, M4V, MKV, WebM, MOV, AVI, WMV, FLV, MPEG/MPG, TS, and M2TS. Browser codec support still applies: H.264/AAC in MP4 and WebM are the most interoperable. Luma reports other files in the catalog and serves them byte-for-byte, but some browsers cannot decode formats such as WMV or particular MKV codecs without prior conversion.
+Supported discovery extensions are MP4, M4V, MKV, WebM, MOV, AVI, WMV, FLV, MPEG/MPG, TS, and M2TS. Browser codec support still applies: H.264/AAC in MP4 and WebM are the most interoperable. Home Library reports other files in the catalog and serves them byte-for-byte, but some browsers cannot decode formats such as WMV or particular MKV codecs without prior conversion.
 
 ## Data and privacy
 
@@ -58,7 +58,7 @@ npm test          # unit tests
 npm run check     # JavaScript syntax checks
 ```
 
-Back up `data/library.db` if you want to preserve edits and playback progress. SQLite uses WAL mode, so stop Luma before copying the database for the simplest consistent backup.
+Back up `data/library.db` if you want to preserve edits and playback progress. SQLite uses WAL mode, so stop Home Library before copying the database for the simplest consistent backup.
 
 ## Architecture
 

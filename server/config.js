@@ -10,7 +10,7 @@ export const config = {
   dataDir,
   databasePath: path.join(dataDir, 'library.db'),
   imageDir: path.join(dataDir, 'images'),
-  name: process.env.LUMA_NAME || 'Luma Library',
+  name: process.env.LUMA_NAME || 'Home Library',
   port: Number(process.env.LUMA_PORT || 7331),
   host: process.env.LUMA_HOST || '0.0.0.0',
   tmdbApiKey: process.env.TMDB_API_KEY || '',
